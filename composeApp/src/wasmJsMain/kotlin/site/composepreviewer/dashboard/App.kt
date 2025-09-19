@@ -7,6 +7,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import kotlinx.browser.window
+import site.composepreviewer.dashboard.pages.home.Home
+import site.composepreviewer.dashboard.pages.login.Login
 import site.composepreviewer.dashboard.theme.DashboardTheme
 
 @Composable
@@ -26,5 +28,9 @@ fun App() {
     }
 
     DashboardTheme {
+        when (location) {
+            "/login" -> Login()
+            "/" -> Home()
+        }
     }
 }
