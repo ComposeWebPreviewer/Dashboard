@@ -1,12 +1,30 @@
 package site.composepreviewer.dashboard
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import kotlinx.browser.window
 import site.composepreviewer.dashboard.theme.DashboardTheme
 
 @Composable
 fun App() {
+    var location by remember { mutableStateOf(window.location.pathname) }
+    var initialized by remember { mutableStateOf(false) }
+    LaunchedEffect(location) {
+        if (!initialized) {
+            initialized = true
+            return@LaunchedEffect
+        }
+
+        window.history.pushState(null, "", location)
+    }
+    window.addEventListener("popstate") {
+        location = window.location.pathname
+    }
+
     DashboardTheme {
-        Text("Hello, Compose Previewer!")
     }
 }
