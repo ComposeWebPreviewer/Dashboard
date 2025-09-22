@@ -13,15 +13,15 @@ kotlin {
         binaries.executable()
     }
 
-    sourceSets {
-        commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
+    sourceSets.commonMain.dependencies {
+        implementation(compose.runtime)
+        implementation(compose.foundation)
+        implementation(compose.ui)
+        implementation(compose.components.resources)
 
-            implementation(libs.compose.material3)
-            implementation(libs.compose.material3.windowSize)
-        }
+        implementation(libs.compose.material3)
+        implementation(libs.compose.material3.windowSize)
+
+        implementation(project(":router"))
     }
 }
