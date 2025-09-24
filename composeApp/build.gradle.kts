@@ -22,6 +22,6 @@ kotlin {
         implementation(libs.compose.material3)
         implementation(libs.compose.material3.windowSize)
 
-        implementation(project(":router"))
+        implementation(libs.compose.web.navigator)
     }
 }

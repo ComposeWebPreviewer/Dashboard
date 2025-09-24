@@ -5,9 +5,14 @@ kotlin = "2.2.10"
 compose-multiplatform = "1.9.0"
 compose-material3 = "1.9.0-beta06"
 
+# Other
+compose-web-navigator = "0.2.0"
+
 [libraries]
 compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-material3" }
 compose-material3-windowSize = { group = "org.jetbrains.compose.material3", name = "material3-window-size-class", version.ref = "compose-material3" }
+
+compose-web-navigator = { group = "io.github.taz03", name = "compose-web-navigator", version.ref = "compose-web-navigator" }
 
 [plugins]
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
