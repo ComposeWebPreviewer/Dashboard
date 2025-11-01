@@ -6,15 +6,30 @@ compose-multiplatform = "1.9.0"
 compose-material3 = "1.9.0-beta06"
 
 # Other
-compose-web-navigator = "0.2.0"
+web-navigator = "1.0.0"
+androidx-lifecycle = "2.9.1"
+ktor = "3.3.0"
+
+# Plugins
+buildconfig = "5.6.8"
 
 [libraries]
 compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "compose-material3" }
 compose-material3-windowSize = { group = "org.jetbrains.compose.material3", name = "material3-window-size-class", version.ref = "compose-material3" }
 
-compose-web-navigator = { group = "io.github.taz03", name = "compose-web-navigator", version.ref = "compose-web-navigator" }
+web-navigator = { group = "io.github.taz03", name = "compose-web-navigator", version.ref = "web-navigator" }
+androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-contentNegotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
-composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig" }
+
+webNavigator = { id = "io.github.taz03.compose.web.navigator", version.ref = "web-navigator" }
