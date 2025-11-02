@@ -1,9 +1,10 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.webNavigator)
 }
 
 kotlin {
@@ -22,6 +23,6 @@ kotlin {
         implementation(libs.compose.material3)
         implementation(libs.compose.material3.windowSize)
 
-        implementation(libs.compose.web.navigator)
+        implementation(libs.web.navigator)
     }
 }

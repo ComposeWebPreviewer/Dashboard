@@ -103,12 +103,6 @@ fun appTypography(): Typography {
         headlineSmall = MaterialTheme.typography.headlineSmall.copy(fontFamily = jetbrainsMono),
         titleLarge = MaterialTheme.typography.titleLarge.copy(fontFamily = jetbrainsMono),
         titleMedium = MaterialTheme.typography.titleMedium.copy(fontFamily = jetbrainsMono),
-        titleSmall = MaterialTheme.typography.titleSmall.copy(fontFamily = jetbrainsMono),
-        bodyLarge = MaterialTheme.typography.bodyLarge.copy(fontFamily = jetbrainsMono),
-        bodyMedium = MaterialTheme.typography.bodyMedium.copy(fontFamily = jetbrainsMono),
-        bodySmall = MaterialTheme.typography.bodySmall.copy(fontFamily = jetbrainsMono),
-        labelLarge = MaterialTheme.typography.labelLarge.copy(fontFamily = jetbrainsMono),
-        labelMedium = MaterialTheme.typography.labelMedium.copy(fontFamily = jetbrainsMono),
-        labelSmall = MaterialTheme.typography.labelSmall.copy(fontFamily = jetbrainsMono)
+        titleSmall = MaterialTheme.typography.titleSmall.copy(fontFamily = jetbrainsMono)
     )
 }
