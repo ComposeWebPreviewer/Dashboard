@@ -18,8 +18,7 @@ import org.jetbrains.compose.resources.painterResource
 fun TopBar(
     onLogoClick: () -> Unit = {}
 ) = Row(
-    modifier = Modifier.fillMaxWidth()
-        .padding(16.dp),
+    modifier = Modifier.fillMaxWidth().padding(16.dp),
     horizontalArrangement = Arrangement.SpaceBetween,
     verticalAlignment = Alignment.CenterVertically
 ) {
