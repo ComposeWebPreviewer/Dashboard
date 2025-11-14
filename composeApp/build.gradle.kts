@@ -19,6 +19,7 @@ kotlin {
         implementation(compose.foundation)
         implementation(compose.ui)
         implementation(compose.components.resources)
+        implementation(compose.materialIconsExtended)
 
         implementation(libs.compose.material3)
         implementation(libs.compose.material3.windowSize)

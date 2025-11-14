@@ -3,9 +3,10 @@ package site.composepreviewer.dashboard.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BrightnessHigh
+import androidx.compose.material.icons.filled.DarkMode
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,13 +14,15 @@ import androidx.compose.ui.unit.dp
 import dashboard.composeapp.generated.resources.Res
 import dashboard.composeapp.generated.resources.logo
 import org.jetbrains.compose.resources.painterResource
+import site.composepreviewer.dashboard.theme.Theme
 
 @Composable
 fun TopBar(
-    onLogoClick: () -> Unit = {}
+    onLogoClick: () -> Unit = {},
+    theme: Theme = Theme.LIGHT,
+    themeToggle: () -> Unit = {}
 ) = Row(
     modifier = Modifier.fillMaxWidth().padding(16.dp),
-    horizontalArrangement = Arrangement.SpaceBetween,
     verticalAlignment = Alignment.CenterVertically
 ) {
     Row(
@@ -36,6 +39,15 @@ fun TopBar(
         Text(
             text = "Compose Preview",
             style = MaterialTheme.typography.headlineLarge
+        )
+    }
+
+    Spacer(Modifier.weight(1f))
+
+    IconButton(onClick = themeToggle) {
+        Icon(
+            imageVector = if (theme == Theme.DARK) Icons.Default.BrightnessHigh else Icons.Default.DarkMode,
+            contentDescription = "Toggle Theme"
         )
     }
 
