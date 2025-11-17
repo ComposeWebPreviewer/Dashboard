@@ -1,8 +1,13 @@
 package site.composepreviewer.dashboard
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Modifier
 import io.github.taz03.compose.web.navigator.NavController
 import io.github.taz03.compose.web.navigator.NavHost
 import kotlinx.browser.localStorage
@@ -16,10 +21,10 @@ import site.composepreviewer.dashboard.theme.Theme
 
 @Composable
 fun App() {
-    val navController = remember { NavController() }
+    val navController = rememberSaveable { NavController() }
     var currentTheme by remember { mutableStateOf(localStorage[Theme::class.toString()]?.let(Theme::valueOf) ?: Theme.LIGHT) }
 
-    DashboardTheme(currentTheme) {
+    DashboardTheme {
         Scaffold(
             topBar = {
                 TopBar(
@@ -31,14 +36,16 @@ fun App() {
                 )
             },
             containerColor = MaterialTheme.colorScheme.background
-        ) {
-            NavHost(navController = navController) {
-                route("/") {
-                    Login()
-                }
+        ) { paddingValues ->
+            Column(Modifier.fillMaxSize().padding(paddingValues)) {
+                NavHost(navController = navController) {
+                    route("/") {
+                        Home()
+                    }
 
-                route("/login") {
-                    Home()
+                    route("/login") {
+                        Login()
+                    }
                 }
             }
         }

@@ -25,5 +25,10 @@ kotlin {
         implementation(libs.compose.material3.windowSize)
 
         implementation(libs.web.navigator)
+
+        implementation(libs.composeunstyled)
+        implementation(libs.composeunstyled.theming)
+        implementation(libs.composeunstyled.primitives)
+        implementation(libs.composeunstyled.platformtheme)
     }
 }
