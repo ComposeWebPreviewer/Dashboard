@@ -27,11 +27,6 @@ ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlin
 
 web-navigator = { group = "io.github.taz03", name = "compose-web-navigator", version.ref = "web-navigator" }
 
-composeunstyled = { group = "com.composables", name = "composeunstyled", version.ref = "composeunstyled" }
-composeunstyled-theming = { group = "com.composables", name = "composeunstyled-theming", version.ref = "composeunstyled" }
-composeunstyled-primitives = { group = "com.composables", name = "composeunstyled-primitives", version.ref = "composeunstyled" }
-composeunstyled-platformtheme = { group = "com.composables", name = "composeunstyled-platformtheme", version.ref = "composeunstyled" }
-
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }

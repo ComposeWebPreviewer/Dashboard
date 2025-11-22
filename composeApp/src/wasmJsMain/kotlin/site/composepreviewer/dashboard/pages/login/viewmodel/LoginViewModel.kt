@@ -1,0 +1,16 @@
+package site.composepreviewer.dashboard.pages.login.viewmodel
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+
+class LoginViewModel : ViewModel() {
+    var email by mutableStateOf("")
+    var emailError by mutableStateOf<String?>(null)
+        private set
+
+    var password by mutableStateOf("")
+    var passwordError by mutableStateOf<String?>(null)
+        private set
+}
